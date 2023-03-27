@@ -27,14 +27,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        DispatchQueue.main.async {
-            if let location = locations.last {
-                self.lat = "\(location.coordinate.latitude)"
-                self.lng = "\(location.coordinate.longitude)"
-                print(self.lat)
-                print(self.lng)
-            }
+        
+        if let location = locations.last {
+            self.lat = "\(location.coordinate.latitude)"
+            self.lng = "\(location.coordinate.longitude)"
+            print(self.lat)
+            print(self.lng)
         }
+        
     }
 
     func getPrayer(){
